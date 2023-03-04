@@ -23,6 +23,10 @@
 </style>
 <script src="{{url_for('static', filename='controller.js')}}" defer></script>
 <script src="{{url_for('static', filename='send_request.js')}}"></script>
+<script defer>
+
+
+</script>
 </head>
 <body>
 
@@ -124,5 +128,9 @@
 <div name="display_info">
   <text>hi hi hi</text>
 </div>
+<div value={{bullets}} id="bullets" style="display:none">
+  {{bullets}}
+</div>
+
 </html>
 

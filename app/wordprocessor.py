@@ -58,6 +58,8 @@ def summarize_notice(full_txt: str) -> str:
         combined_str = ' '.join([str(item) for item in splitstr])
         str_lst[i] = combined_str
 
+    str_lst = [i for i in str_lst if len(i.strip()) > 1]
+
     # Create the dictionary and fill it with the bullet points
     str_dct = {}
     for i in range(len(str_lst)):
