@@ -39,7 +39,7 @@ def scrape_policy(URL):
     '''
     page = requests.get(URL)
 
-    results_test = open("result.txt", "w+", encoding="utf-8")
+    scraped_txt = str()
 
     soup = BeautifulSoup(page.text, "html.parser")
 
@@ -55,13 +55,13 @@ def scrape_policy(URL):
         # With Headers Method
         for element in soup.find_all():
             if element.name == 'p':
-                results_test.write(element.text + "\n\n")
+                scraped_txt = scraped_txt + element.text + "\n"
             elif element.name in ['h1', 'h2', 'h3', 'h4','h5','h6']:
-                results_test.write("[" + element.text + "]")
+                scraped_txt = scraped_txt + "[" + element.text + "]"
     else:
         pass
     
-    results_test.close()
+    return scraped_txt
 
 if __name__ == "__main__":
     # URL = "https://www.twitch.tv/p/en/legal/privacy-notice/"
