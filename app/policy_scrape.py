@@ -68,4 +68,4 @@ if __name__ == "__main__":
     URL = "https://www.apple.com/legal/privacy/en-ww/"
     # URL = "https://slack.com/intl/en-au/trust/privacy/privacy-policy"
 
-    scrape_policy(URL)
+    print(scrape_policy(URL))
