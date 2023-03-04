@@ -11,7 +11,7 @@
   body,h1,h5 {font-family: "Raleway", sans-serif}
   body, html {height: 100%}
   .bgimg {
-    background-image: url(\images/Background-website-01-1024x687.jpg);
+    background-image: url(static/images/Background-website-01-1024x687.jpg);
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -21,7 +21,8 @@
     font-size: 24px; 
   }
 </style>
-<script src="controller.js" defer></script>
+<script src="{{url_for('static', filename='controller.js')}}" defer></script>
+<script src="{{url_for('static', filename='send_request.js')}}"></script>
 </head>
   <body style="width: 400px">
     <div class="bgimg w3-display-container w3-text-black">
