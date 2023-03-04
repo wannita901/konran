@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html', bullets = "EMPTY")
 
 @app.route('/get', methods=["POST"])
 def submit_form():
@@ -14,7 +14,7 @@ def submit_form():
     chunks = scrape_policy(url)
     if chunks:
         bullets = summarize_notice(chunks)
-        return bullets
+        return render_template('home.html', bullets = bullets)
     else:
         return redirect('/')
 

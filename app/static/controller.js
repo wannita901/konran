@@ -5,7 +5,6 @@ function jsonToNode(json) {
         // for (topic_item in json[topic]){
         //     text += topic + ": " + topic_item
         // }
-        console.log(json[topic])
         text = document.createElement("text")
         name_node = document.createTextNode(topic)
         text.style.fontWeight = "bold"
@@ -21,6 +20,12 @@ function jsonToNode(json) {
             bullet_node.appendChild(value_node)
             bullet_node.style.paddingLeft = "20px"
             node.appendChild(bullet_node)
+            
+            // text_value = document.createElement("text")
+            // value_node = document.createTextNode("- " + json[topic][topic_item])
+            // text_value.appendChild(value_node)
+            // node.appendChild(text_value)
+            
             break_node = document.createElement("br")
             node.appendChild(break_node)
         }
@@ -41,24 +46,31 @@ var json_ = {
     "topic2": ["a","b","c","d"]
 }
 
-var json_test = {
-    "Data Privacy": [
-        "Twitch collects personal information from its users, such as name, email address, and IP address.", 
-        "Twitch uses this data to provide its services, including streaming video, chat, and other features.",
-        "Twitch may also use this data to personalize content, improve its services, and provide targeted advertising.",
-        "Twitch may share personal information with third parties in certain circumstances, such as to comply with legal obligations, protect users\u2019 rights, or to prevent fraud or abuse."
-    ]
-}
+
+
+
 
 function createDiv(json){
-
     // console.log(document.getElementById("containerthing"))   
     document.getElementById("containerthing").appendChild(jsonToNode(json))
 }
-
-createDiv(json_test)
 
 chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {    
     let url = tabs[0].url;
     document.getElementById("url").value=url
 });
+
+// createDiv(json_test)
+document.addEventListener('DOMContentLoaded', (event) => {
+    var text_content = document.getElementById("bullets").textContent;
+    text_content = text_content.trim()
+    console.log(text_content)
+    if (text_content === "EMPTY"){
+
+    }
+    else{
+    var json_test = JSON.parse(text_content)
+    console.log(json_test)
+    createDiv(json_test)
+    }
+})
