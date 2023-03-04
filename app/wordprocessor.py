@@ -13,7 +13,7 @@ def summarize_notice(full_txt: str) -> str:
     # Define OpenAI API Key
     # Note: Remove the actual API key before pushing to GitHub
     with open('key.txt','r') as key:
-        openai.api_key = key
+        openai.api_key = key.read()
 
     # Define which model to use
     model_engine = "text-davinci-003"

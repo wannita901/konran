@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+import validators
 
 def strips(items):
     '''
@@ -37,6 +38,9 @@ def scrape_policy(URL):
     '''
     Scrape policy page content if it qualifies as a policy page
     '''
+    if not validators.url(URL):
+        return
+
     page = requests.get(URL)
 
     scraped_txt = str()
