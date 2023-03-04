@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+import validators
 
 def strips(items):
     '''
@@ -37,9 +38,12 @@ def scrape_policy(URL):
     '''
     Scrape policy page content if it qualifies as a policy page
     '''
+    if not validators.url(URL):
+        return
+
     page = requests.get(URL)
 
-    results_test = open("result.txt", "w+", encoding="utf-8")
+    scraped_txt = str()
 
     soup = BeautifulSoup(page.text, "html.parser")
 
@@ -55,17 +59,17 @@ def scrape_policy(URL):
         # With Headers Method
         for element in soup.find_all():
             if element.name == 'p':
-                results_test.write(element.text + "\n\n")
+                scraped_txt = scraped_txt + element.text + "\n"
             elif element.name in ['h1', 'h2', 'h3', 'h4','h5','h6']:
-                results_test.write("[" + element.text + "]")
+                scraped_txt = scraped_txt + "[" + element.text + "]"
     else:
-        pass
+        return None
     
-    results_test.close()
+    return scraped_txt
 
 if __name__ == "__main__":
     # URL = "https://www.twitch.tv/p/en/legal/privacy-notice/"
     URL = "https://www.apple.com/legal/privacy/en-ww/"
     # URL = "https://slack.com/intl/en-au/trust/privacy/privacy-policy"
 
-    scrape_policy(URL)
+    print(scrape_policy(URL))

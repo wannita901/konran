@@ -6,13 +6,14 @@ def summarize_notice(full_txt: str) -> str:
     """
     This func takes in a privacy policy as a string and returns a bullet point summary of this given
     privacy policy in JSON form
-    :param full_txt: a given privacy policy
+    :param full_txt: a given privacy polic
     :return: returns a summary returned in JSON form.
     """
 
     # Define OpenAI API Key
     # Note: Remove the actual API key before pushing to GitHub
-    openai.api_key = ""
+    with open('key.txt','r') as key:
+        openai.api_key = key.read()
 
     # Define which model to use
     model_engine = "text-davinci-003"
