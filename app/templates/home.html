@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PROJECT KONRAN</title>
+<title>Project Konran</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('\images/contracts.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
+  body,h1,h5 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  .bgimg {
+    background-image: url(\images/Background-website-01-1024x687.jpg);
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  h1 {
+    color:black;
+    font-size: 24px; 
+  }
 </style>
+<script src="controller.js" defer></script>
 </head>
 <body>
 
+<!-- 
 <div class="bgimg w3-display-container w3-text-black">
   <div class="w3-display-middle w3-jumbo">
     <p>PROJECT KONRAN</p>
@@ -32,10 +39,10 @@ body, html {height: 100%}
     <p class="w3-large">UNDER DEVELOPMENT</p>
     <p>Developed for UNIHACK 2023. Template powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   </div>
-</div>
+</div> -->
 
 <!-- Menu Modal -->
-<div id="menu" class="w3-modal">
+<!-- <div id="menu" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black w3-display-container">
       <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
@@ -66,10 +73,10 @@ body, html {height: 100%}
       <h5>Cheese <b>$5.50</b></h5>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Contact Modal -->
-<div id="contact" class="w3-modal">
+<!-- <div id="contact" class="w3-modal">
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black">
       <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
@@ -86,8 +93,33 @@ body, html {height: 100%}
       </form>
     </div>
   </div>
-</div>
+</div> -->
+<div class="bgimg w3-display-container w3-text-black">
+  <div class="w3-display-topmiddle w3-jumbo">
+    <img src=".\images/logo2.png">
+  </div>
+  <div class="w3-display-middle" style="height:200px; width: 500px;">
+    <p style="background-color: transparent; margin-bottom: 5px;">URL:</p> 
+    <input type="text" id="url" name="url" style="width: 400px; border-style:solid;" placeholder="Insert the URL here">
+    <button class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
+    <div id="containerthing" class="card" style="width: 500px; height: 500px; background-color: white;">
+    </div>
+  </div>
+  
 
+  </div>
+  <!-- <div class="w3-display-topleft w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">button 1</button></p>
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">button 2</button></p>
+  </div> -->
+  <!-- <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">UNDER DEVELOPMENT</p>
+    <p class="w3-large">UNDER DEVELOPMENT</p>
+    <p>Developed for UNIHACK 2023. Template powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </div> -->
 </body>
+<div name="display_info">
+  <text>hi hi hi</text>
+</div>
 </html>
 
