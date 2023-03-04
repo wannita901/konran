@@ -7,6 +7,7 @@ def strips(items):
     '''
     Strip newline characters and convert list of strings item to lowercase
     '''
+
     new_items = [x.lower().strip() for x in items]
     return new_items
 
