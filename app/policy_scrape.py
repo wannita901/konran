@@ -59,7 +59,7 @@ def scrape_policy(URL):
             elif element.name in ['h1', 'h2', 'h3', 'h4','h5','h6']:
                 scraped_txt = scraped_txt + "[" + element.text + "]"
     else:
-        pass
+        return None
     
     return scraped_txt
 

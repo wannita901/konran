@@ -6,7 +6,7 @@ def summarize_notice(full_txt: str) -> str:
     """
     This func takes in a privacy policy as a string and returns a bullet point summary of this given
     privacy policy in JSON form
-    :param full_txt: a given privacy policy
+    :param full_txt: a given privacy polic
     :return: returns a summary returned in JSON form.
     """
 

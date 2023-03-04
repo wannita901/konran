@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
-import policy_scrape
-#import wordprocessor
+from policy_scrape import scrape_policy
+from wordprocessor import summarize_notice
 
 app = Flask(__name__)
 
@@ -11,7 +11,12 @@ def home():
 @app.route('/get', methods=["POST"])
 def submit_form():
     url = request.form['url']
-    return url
+    chunks = scrape_policy(url)
+    if chunks:
+        bullets = summarize_notice(chunks)
+        return bullets
+    else:
+        return 
 
 if __name__ == "__main__":
     app.run()
