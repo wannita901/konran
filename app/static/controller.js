@@ -1,24 +1,33 @@
 function jsonToNode(json) {
     node = document.createElement("div")
+    node.style.paddingTop = "20px"
     for (let topic in json) {
         // for (topic_item in json[topic]){
         //     text += topic + ": " + topic_item
         // }
         text = document.createElement("text")
         name_node = document.createTextNode(topic)
+        text.style.fontWeight = "bold"
         text.appendChild(name_node)
         node.appendChild(text)
         break_node = document.createElement("br")
         node.appendChild(break_node)
         
         for (topic_item in json[topic]) {
-            text_value = document.createElement("text")
-            value_node = document.createTextNode("- " + json[topic][topic_item])
-            text_value.appendChild(value_node)
-            node.appendChild(text_value)
+            console.log(json[topic][topic_item])
+            bullet_node = document.createElement("li")
+            value_node = document.createTextNode(json[topic][topic_item])
+            bullet_node.appendChild(value_node)
+            bullet_node.style.paddingLeft = "20px"
+            node.appendChild(bullet_node)
+            
+            // text_value = document.createElement("text")
+            // value_node = document.createTextNode("- " + json[topic][topic_item])
+            // text_value.appendChild(value_node)
+            // node.appendChild(text_value)
+            
             break_node = document.createElement("br")
             node.appendChild(break_node)
-
         }
 
         // for (let j = 0; j < json["values"].length(); j++){
@@ -46,6 +55,11 @@ function createDiv(json){
     document.getElementById("containerthing").appendChild(jsonToNode(json))
 }
 
+chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {    
+    let url = tabs[0].url;
+    document.getElementById("url").value=url
+});
+
 // createDiv(json_test)
 document.addEventListener('DOMContentLoaded', (event) => {
     var text_content = document.getElementById("bullets").textContent;
@@ -60,4 +74,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     createDiv(json_test)
     }
 })
-
