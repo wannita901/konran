@@ -11,7 +11,7 @@
   body,h1,h5 {font-family: "Raleway", sans-serif}
   body, html {height: 100%}
   .bgimg {
-    background-image: url(\images/Background-website-01-1024x687.jpg);
+    background-image: url(\static/images/Background-website-01-1024x687.jpg);
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -23,15 +23,15 @@
 </style>
 <script src="controller.js" defer></script>
 </head>
-  <body style="width: 400px">
+  <body>
     <div class="bgimg w3-display-container w3-text-black">
       <div class="w3-display-topmiddle w3-jumbo">
-        <img src="./images\logo2.png">
+        <img src="{{url_for('static', filename='images/logo2.png')}}">
       </div>
-      <div class="w3-display-middle" style="width: 400px; padding-top: 500px; margin-left:15px">  
-        <input type="text" id="url" name="url" style="width: 300px; border-style:solid;" placeholder="Insert the URL here">
+      <div class="w3-display-middle" style="width: 500px; padding-top: 500px; margin-left:15px">  
+        <input type="text" id="url" name="url" style="width: 400px; border-style:solid;" placeholder="Insert the URL here">
         <button class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
-        <div id="containerthing" class="card" style="width: 375px; height: 500px; background-color: white;">
+        <div id="containerthing" class="card" style="width: 500px; height: 500px; background-color: white;">
         </div>
       </div>
     </div>
