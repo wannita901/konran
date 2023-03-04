@@ -16,7 +16,7 @@ def submit_form():
         bullets = summarize_notice(chunks)
         return bullets
     else:
-        return redirect(url_for('/'))
+        return redirect('/')
 
 if __name__ == "__main__":
     app.run()
