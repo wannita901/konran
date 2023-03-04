@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from policy_scrape import scrape_policy
 from wordprocessor import summarize_notice
 
@@ -16,7 +16,7 @@ def submit_form():
         bullets = summarize_notice(chunks)
         return bullets
     else:
-        return 
+        return redirect(url_for('/'))
 
 if __name__ == "__main__":
     app.run()
