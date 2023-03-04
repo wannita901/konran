@@ -12,7 +12,7 @@ def summarize_notice(full_txt: str) -> str:
 
     # Define OpenAI API Key
     # Note: Remove the actual API key before pushing to GitHub
-    openai.api_key = "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"
+    openai.api_key = ""
 
     # Define which model to use
     model_engine = "text-davinci-003"
@@ -67,8 +67,10 @@ def summarize_notice(full_txt: str) -> str:
     return y
 
 # Example below
+'''
 txt = "This Twitch Privacy Notice applies to your use of www.twitch.tv, and any other websites, applications, services, or live (in-person) events provided, owned, or operated by Twitch Interactive, Inc. (with its affiliates, âTwitchâ) that link to this Privacy Notice (collectively, the âTwitch Servicesâ). Twitch values the privacy of users, subscribers, publishers, members, and others who visit and use the Twitch Services (collectively or individually, âyouâ or âusersâ) and wants you to be familiar with how we collect, use, and disclose personal information from and about you. By visiting www.twitch.tv, setting up your Twitch account, or using the Twitch Services, you are accepting the practices described in this Privacy Notice, to the extent permitted by law."
 resp = summarize_notice(txt)
 
 print(txt)
 print(resp)
+'''
