@@ -51,11 +51,24 @@ function createDiv(json){
     document.getElementById("containerthing").appendChild(jsonToNode(json))
 }
 
+<<<<<<< HEAD
+// chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {    
+//     let url = tabs[0].url;
+//     document.getElementById("url").value=url
+// });
+
+=======
+>>>>>>> 1cf04c8746edd14a44a9757bf8af1e09504ff81c
 // createDiv(json_test)
 document.addEventListener('DOMContentLoaded', (event) => {
+    
     var text_content = document.getElementById("bullets").textContent;
     text_content = text_content.trim()
+<<<<<<< HEAD
+    // console.log(text_content)
+=======
     console.log(text_content)   
+>>>>>>> 1cf04c8746edd14a44a9757bf8af1e09504ff81c
     if (text_content === "EMPTY"){
 
     }
@@ -63,5 +76,55 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var json_test = JSON.parse(text_content)
     console.log(json_test)
     createDiv(json_test)
+
     }
 })
+
+function submitForm() {
+    $('#checkButton').click(function() {
+        $.ajax({
+            url: 'http://127.0.0.1:5000/process',
+            type: 'POST',
+            data: {
+                url: document.getElementById("url").textContent
+            },
+            success: function(msg) {
+                alert('Email Sent');
+            }               
+        });
+    });
+
+
+    // var http = new XMLHttpRequest();
+    // http.open("POST", "http://127.0.0.1:5000/process", true);
+    // http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    // var params = ; // probably use document.getElementById(...).value
+    // http.send(params);
+    // http.onload = function() {
+    //     alert(http.responseText);
+    // }
+}
+
+function spinnerOn(){
+    // console.log("hello hello")
+    // document.getElementById("spinner").style.display = "block";
+    // create div for spinner
+    spinner_div = document.createElement("div")
+    spinner_div.className = "spinner-grow text-secondary"
+    spinner_div.role = "status"
+    spinner_div.style.position = "absolute"
+    spinner_div.style.top = "20%"
+    spinner_div.style.left = "45%"
+    spinner_div.style.width = "5rem"
+    spinner_div.style.height = "5rem"
+
+    // create spinner span
+    spinner_span = document.createElement("span")
+    spinner_span.className = "sr-only"
+
+    spinner_div.appendChild(spinner_span)
+    
+    // add to the card
+    document.getElementById("containerthing").appendChild(spinner_div)
+}
+
