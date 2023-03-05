@@ -55,10 +55,10 @@ function createDiv(json){
     document.getElementById("containerthing").appendChild(jsonToNode(json))
 }
 
-chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {    
-    let url = tabs[0].url;
-    document.getElementById("url").value=url
-});
+// chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {    
+//     let url = tabs[0].url;
+//     document.getElementById("url").value=url
+// });
 
 // createDiv(json_test)
 document.addEventListener('DOMContentLoaded', (event) => {
