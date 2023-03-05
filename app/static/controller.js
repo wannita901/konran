@@ -46,26 +46,29 @@ var json_ = {
     "topic2": ["a","b","c","d"]
 }
 
-
-
-
-
 function createDiv(json){
     // console.log(document.getElementById("containerthing"))   
     document.getElementById("containerthing").appendChild(jsonToNode(json))
 }
 
+<<<<<<< HEAD
 // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {    
 //     let url = tabs[0].url;
 //     document.getElementById("url").value=url
 // });
 
+=======
+>>>>>>> 1cf04c8746edd14a44a9757bf8af1e09504ff81c
 // createDiv(json_test)
 document.addEventListener('DOMContentLoaded', (event) => {
     
     var text_content = document.getElementById("bullets").textContent;
     text_content = text_content.trim()
+<<<<<<< HEAD
     // console.log(text_content)
+=======
+    console.log(text_content)   
+>>>>>>> 1cf04c8746edd14a44a9757bf8af1e09504ff81c
     if (text_content === "EMPTY"){
 
     }

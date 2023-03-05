@@ -1,11 +1,11 @@
 {
     "name": "Konran",
     "version": "1.0.0",
-    "description": "try this.",
+    "description": "Konfusion ran-away.",
     "manifest_version": 3,
     "author": "Wannita",
     "action":{
-        "default_popup": "home.html",
+        "default_popup": "templates/index.html",
         "default_title": "Konran"
     },
     "permissions": [ "tabs" ]
