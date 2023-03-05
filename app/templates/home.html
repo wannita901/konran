@@ -28,18 +28,32 @@
 
 </script>
 </head>
-  <body style="width: 400px">
-    <div class="bgimg w3-display-container w3-text-black">
-      <div class="w3-display-topmiddle w3-jumbo">
-        <img src="./images\logo2.png">
-      </div>
-      <div class="w3-display-middle" style="width: 400px; padding-top: 500px; margin-left:15px">  
-        <input type="text" id="url" name="url" style="width: 300px; border-style:solid;" placeholder="Insert the URL here">
-        <button class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
-        <div id="containerthing" class="card" style="width: 375px; height: 500px; background-color: white;">
-        </div>
-      </div>
+<body>
+
+<div class="bgimg w3-display-container w3-text-black">
+  <div class="w3-display-topmiddle w3-jumbo">
+    <img src="{{url_for('static', filename='images/logo2.png')}}">
+  </div>
+  <div class="w3-display-middle" style="height:200px; width: 500px;">
+    <p style="background-color: transparent; margin-bottom: 5px;">URL:</p>
+    <form action="/get" id="form" method="POST"> 
+      <input type="text" id="url" name="url" style="width: 400px; border-style:solid;" placeholder="Insert the URL here">
+      <button type="submit" form="form" class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
+    </form>
+   <div id="containerthing" class="card" style="width: 500px; height: 500px; background-color: white;">
     </div>
-  </body>
+  </div>
+  
+
+  </div>
+
+</body>
+
+<div name="display_info">
+  <text>hi hi hi</text>
+</div>
+<div value={{bullets}} id="bullets" style="display:none">
+  {{bullets}}
+</div>
 </html>
 

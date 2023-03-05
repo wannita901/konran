@@ -7,7 +7,6 @@ def strips(items):
     '''
     Strip newline characters and convert list of strings item to lowercase
     '''
-
     new_items = [x.lower().strip() for x in items]
     return new_items
 
@@ -22,9 +21,11 @@ def authenticate_page(soup):
     tags = strips(tags)
 
     # Scrape site headers
-    headers_all = soup.find_all(re.compile('^h[1-2]$'))
+    headers_all = soup.find_all(re.compile('^h[1-2]$'), text=True)
     headers = []
     for header in headers_all:
+        if header.find('div'):
+            header = header.find('div')
         headers.extend(header)
     headers = strips(headers)
     headers = [header.split() for header in headers]
@@ -66,6 +67,9 @@ def scrape_policy(URL):
     else:
         return None
     
+    print(len(scraped_txt))
+    scraped_txt = scraped_txt[:17000]
+
     return scraped_txt
 
 if __name__ == "__main__":

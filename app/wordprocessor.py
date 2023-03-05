@@ -59,6 +59,7 @@ def summarize_notice(full_txt: str) -> str:
         str_lst[i] = combined_str
 
     str_lst = [i for i in str_lst if len(i.strip()) > 1]
+    str_lst = str_lst[:5]
 
     # Create the dictionary and fill it with the bullet points
     str_dct = {}
