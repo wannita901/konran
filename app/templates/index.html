@@ -11,7 +11,7 @@
   body,h1,h5 {font-family: "Raleway", sans-serif}
   body, html {height: 100%}
   .bgimg {
-    background-image: url(\static/images/Background-website-01-1024x687.jpg);
+    background-image: url(../static/images/Background-website-01-1024x687.jpg);
     min-height: 100%;
     background-position: center;
     background-size: cover;
@@ -21,20 +21,46 @@
     font-size: 24px; 
   }
 </style>
-<script src="controller.js" defer></script>
+<!-- <script  type="text/javascript" src="../controller.js" defer></script>
+<script  type="text/javascript" src="../send_request.js"></script> -->
+<script  type="text/javascript" src="./extension.js"></script>
 </head>
-  <body>
-    <div class="bgimg w3-display-container w3-text-black">
-      <div class="w3-display-topmiddle w3-jumbo">
-        <img src="{{url_for('static', filename='images/logo2.png')}}">
-      </div>
-      <div class="w3-display-middle" style="width: 500px; padding-top: 500px; margin-left:15px">  
-        <input type="text" id="url" name="url" style="width: 400px; border-style:solid;" placeholder="Insert the URL here">
-        <button class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
-        <div id="containerthing" class="card" style="width: 500px; height: 500px; background-color: white;">
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+<body style="width: 400px;">
+
+<div style="width: 400px;" class="bgimg w3-display-container w3-text-black">
+  <div class="w3-display-topmiddle w3-jumbo">
+    <img src="../static/images/logo2.png">
+  </div>
+  <div class="w3-display-middle" style="height:200px; width: 400px; padding-left: 50px; padding: 20px;">
+    <h5 style="background-color: transparent; margin-bottom: 5px;">URL:</h5>
+    <form action="/" id="form" method="POST"> 
+      <input type="text" id="url" name="url" style="width: 280px; border-style:solid" placeholder="Insert the URL here">
+      <button type="submit" form="form" class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
+    </form>
+   <div id="containerthing" class="card" style="width: 400; background-color: white; padding: 5px;">
+     <div id="bullets">
+      <h5 style="font-weight:bold">Privacy Policy:</h5>
+      <li>
+        Twitch collects personal information from its users, such as name, email address, and IP address.
+      </li>
+      <li>
+        Twitch uses this data to provide its services, including streaming video, chat, and other features.
+      </li>
+      <li>
+        Twitch may also use this data to personalize content, improve its services, and provide targeted advertising.
+      </li>
+      <li>
+        Twitch may share personal information with third parties in certain circumstances, such as to comply with legal obligations, protect users’ rights, or to prevent fraud or abuse.
+      </li>
+      <li>
+        Twitch may also use cookies and other tracking technologies to collect usage data about its users.
+      </li>
+    </div>   
+  </div>
+  </div>
+</div>
+</body>
+<!-- <div name="display_info">
+  <text>hi hi hi</text>
+</div> -->
 
