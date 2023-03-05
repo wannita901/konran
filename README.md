@@ -77,6 +77,9 @@ Future version of KONRAN will be faster and smarter. We've identified many bottl
 
 ________________________
 
+(To be continue.)
+
 ### Policy Ranking
 web name: 109
+
 web url: 731
