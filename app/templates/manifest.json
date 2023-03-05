@@ -1,0 +1,12 @@
+{
+    "name": "Konran",
+    "version": "1.0.0",
+    "description": "try this.",
+    "manifest_version": 3,
+    "author": "Wannita",
+    "action":{
+        "default_popup": "home.html",
+        "default_title": "Konran"
+    },
+    "permissions": [ "tabs" ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Konran</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+  body,h1,h5 {font-family: "Raleway", sans-serif}
+  body, html {height: 100%}
+  .bgimg {
+    background-image: url(\static/images/Background-website-01-1024x687.jpg);
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  h1 {
+    color:black;
+    font-size: 24px; 
+  }
+</style>
+<script src="controller.js" defer></script>
+</head>
+  <body>
+    <div class="bgimg w3-display-container w3-text-black">
+      <div class="w3-display-topmiddle w3-jumbo">
+        <img src="{{url_for('static', filename='images/logo2.png')}}">
+      </div>
+      <div class="w3-display-middle" style="width: 500px; padding-top: 500px; margin-left:15px">  
+        <input type="text" id="url" name="url" style="width: 400px; border-style:solid;" placeholder="Insert the URL here">
+        <button class="w3-button w3-indigo" style="padding-top: 13px; padding-bottom: 15px; margin-bottom: 4px;"> Check </button>
+        <div id="containerthing" class="card" style="width: 500px; height: 500px; background-color: white;">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
