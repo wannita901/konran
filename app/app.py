@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return render_template('home.html', bullets = "EMPTY")
 
-@app.route('/get', methods=["POST"])
+@app.route('/', methods=["POST"])
 def submit_form():
     url = request.form['url']
     chunks = scrape_policy(url)
