@@ -48,14 +48,14 @@ var json_ = {
 
 function createDiv(json){
     // console.log(document.getElementById("containerthing"))   
-    document.getElementById("bullets").appendChild(jsonToNode(json))
+    document.getElementById("containerthing").appendChild(jsonToNode(json))
 }
 
 // createDiv(json_test)
 document.addEventListener('DOMContentLoaded', (event) => {
     var text_content = document.getElementById("bullets").textContent;
     text_content = text_content.trim()
-    console.log(text_content)
+    console.log(text_content)   
     if (text_content === "EMPTY"){
 
     }
